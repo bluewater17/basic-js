@@ -29,7 +29,6 @@ function repeater(str, options) {
   ) {
     return str + options.addition;
   }
-
   if (options.separator === undefined) {
     options.separator = '+';
   }
@@ -45,18 +44,14 @@ function repeater(str, options) {
   if (options.additionRepeatTimes === undefined) {
     options.additionRepeatTimes = 0;
   }
-
   if (options.additionSeparator === undefined) {
     options.additionSeparator = '|';
   }
-
   for (let i = 0; i < options.additionRepeatTimes; i++) {
     additionArr.push(options.addition);
   }
   const additionStr = additionArr.join(options.additionSeparator);
-  console.log('additonStr', additionStr);
   const subStr = str + additionStr;
-  console.log('subStr', subStr);
   const res = Array(options.repeatTimes).fill(subStr).join(options.separator);
   return res;
 }
